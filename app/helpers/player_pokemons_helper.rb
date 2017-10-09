@@ -1,0 +1,2 @@
+module PlayerPokemonsHelper
+end

@@ -1,0 +1,40 @@
+<% provide(:title, "Home") %>
+<h1>Poke Fight</h1>
+<p>
+  This is the home page for PokeFight
+</p>
+
+
+<div class="col-sm-6 col-md-3">
+	<div class="thumbnail tile tile-medium tile-green">
+        <a href=<%= pokemons_path %> class="fa-links">
+            <h1>All Pokemon</h1>
+                <i class="fa fa-3x fa-home"></i>
+		</a>
+    </div>
+</div>
+<div class="col-sm-6 col-md-3">
+	<div class="thumbnail tile tile-medium tile-orange">
+        <a href= <%= players_path %> class="fa-links">
+            <h1>All Players</h1>
+                <i class="fa fa-3x fa-rss-square"></i>
+		</a>
+	</div>
+</div>
+
+<div class="col-sm-6 col-md-3">
+	<div class="thumbnail tile tile-medium tile-green">
+        <a href="#" class="fa-links">
+            <h1>All Fixtures</h1>
+                <i class="fa fa-3x fa-home"></i>
+		</a>
+    </div>
+</div>
+<div class="col-sm-6 col-md-3">
+	<div class="thumbnail tile tile-medium tile-orange">
+        <a href="#" class="fa-links">
+            <h1>Standings</h1>
+                <i class="fa fa-3x fa-rss-square"></i>
+		</a>
+	</div>
+</div>
