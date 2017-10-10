@@ -14,6 +14,12 @@
   <strong>Win count:</strong>
   <%= @player.win_count %>
 </p>
+<p>
+<strong><%= @player.name %>'s Pokemons: </strong>
+<%= render @pokemons%>
+</p>
 
+
+<%= link_to 'Add Pokemons','#' %> |
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

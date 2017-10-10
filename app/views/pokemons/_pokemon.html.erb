@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Dex number</th>
+      <th>Image</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.dex_number %></td>
+        <td><img alt= <%= pokemon.name%> src= <%=pokemon.image%> width="50" height="50" /></td> 
+        <td><%= link_to 'Show', pokemon %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

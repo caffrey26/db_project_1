@@ -10,6 +10,9 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    id = params[:id] # retrieve player ID from URI route
+    @player = Player.find(id) # look up player by unique ID
+    @pokemons = @player.pokemons
   end
 
   # GET /players/new
