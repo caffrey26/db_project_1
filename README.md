@@ -1,24 +1,16 @@
+Getting started
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+You can directly use the web application deployed on heroku here: https://aqueous-thicket-33890.herokuapp.com/
+Or: 
+To get started with the app, clone the repo and then install the needed gems:
 
+$ bundle install --without production
+Next, migrate the database:
 
-Welcome to your Rails project on Cloud9 IDE!
+$ rails db:migrate
+Finally, run the test suite to verify that everything is working correctly:
 
-To get started, just do the following:
+$ rails test
+If the test suite passes, you'll be ready to run the app in a local server:
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+$ rails server
