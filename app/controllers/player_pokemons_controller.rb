@@ -4,6 +4,7 @@ class PlayerPokemonsController < ApplicationController
   # GET /player_pokemons
   # GET /player_pokemons.json
   def index
+     
     @player_pokemons = PlayerPokemon.all
   end
 
@@ -23,7 +24,7 @@ class PlayerPokemonsController < ApplicationController
 
   # POST /player_pokemons
   # POST /player_pokemons.json
-  def create
+  def createpk
     @player_pokemon = PlayerPokemon.new(player_pokemon_params)
 
     respond_to do |format|
@@ -69,6 +70,6 @@ class PlayerPokemonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_pokemon_params
-      params.require(:player_pokemon).permit(:player_id, :pokemon_id)
+      params.permit(:player_id, :pokemon_id)
     end
 end

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  
+  get 'pokemons/select_one' => 'pokemons#select_one', :as => 'select_one'
+  get 'player_pokemons/createpk' => 'player_pokemons#createpk', :as => 'createpk'
 
   root 'static_pages#home'
   resources :player_pokemons
