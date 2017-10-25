@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009004727) do
+ActiveRecord::Schema.define(version: 20171025182321) do
+
+  create_table "fights", force: :cascade do |t|
+    t.integer  "challenger_player_id"
+    t.integer  "challenger_pokemon_id"
+    t.integer  "challenged_player_id"
+    t.integer  "challenged_pokemon_id"
+    t.date     "fight_date"
+    t.integer  "fight_winner"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "player_pokemons", force: :cascade do |t|
     t.integer  "player_id"

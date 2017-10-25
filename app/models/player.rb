@@ -1,4 +1,12 @@
 class Player < ActiveRecord::Base
+  before_save :default_values
+  def default_values
+    if self.win_count <0 then
+      self.win_count = 0
+    end
+    self.win_count ||= 0
+  end
+
   has_many :player_pokemons, :dependent => :destroy
   has_many :pokemons, -> { uniq }, :through => :player_pokemons
   

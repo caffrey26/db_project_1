@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :fights
+  resources :fights
   get 'static_pages/home'
-  
+  post '/fights/challenger_pokemon', to: 'fights#challenger_pokemon', as: 'challenger_pokemon'
+  post '/fights/challenged_player', to: 'fights#challenged_player', as: 'challenged_player'
+  post '/fights/challenged_pokemon', to: 'fights#challenged_pokemon', as: 'challenged_pokemon'
+  post '/fights/create_fight', to: 'fights#create_fight', as: 'create_fight'
+  get 'static_pages/standings', to: 'static_pages#standings', as: 'standings'
   get 'pokemons/select_one' => 'pokemons#select_one', :as => 'select_one'
   get 'player_pokemons/createpk' => 'player_pokemons#createpk', :as => 'createpk'
 

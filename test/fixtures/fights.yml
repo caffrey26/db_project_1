@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenger_player_id: 
+  challenger_pokemon_id: 
+  challenged_player_id: 
+  challenged_pokemon_id: 
+  fight_date: 
+  fight_winner: 1
+
+two:
+  challenger_player_id: 
+  challenger_pokemon_id: 
+  challenged_player_id: 
+  challenged_pokemon_id: 
+  fight_date: 
+  fight_winner: 1

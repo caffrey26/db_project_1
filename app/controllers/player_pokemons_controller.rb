@@ -29,7 +29,7 @@ class PlayerPokemonsController < ApplicationController
 
     respond_to do |format|
       if @player_pokemon.save
-        format.html { redirect_to @player_pokemon, notice: 'Player pokemon was successfully created.' }
+        format.html { redirect_to @player_pokemon, notice: 'Pokemon was successfully captured.' }
         format.json { render :show, status: :created, location: @player_pokemon }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class PlayerPokemonsController < ApplicationController
   def destroy
     @player_pokemon.destroy
     respond_to do |format|
-      format.html { redirect_to player_pokemons_url, notice: 'Player pokemon was successfully destroyed.' }
+      format.html { redirect_to player_pokemons_url, notice: 'Pokemon was successfully removed from the player.' }
       format.json { head :no_content }
     end
   end

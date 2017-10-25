@@ -1,0 +1,14 @@
+<%= form_for :pokemon2, url: create_fight_path(:player1_id => @player1, :pokemon1_id => @pokemon1, :player2_id => @player2) do |f| %>
+Choose one of the Pokemons of:   <%=Player.find(@player2).name  %> 
+   <div class="field">
+    <%= f.label :challenged_pokemon_id %><br>
+    <%= f.collection_select(:challenged_pokemon_id, @pokemons, :id, :name) %>
+  </div>
+  
+  <%= f.submit  %>
+<% end  %>
+
+
+Challenger Player Name: <%=Player.find(@player1).name  %> 
+<br>
+Challenger Pokemon Name: <%=Pokemon.find(@pokemon1).name  %>

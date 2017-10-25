@@ -1,0 +1,11 @@
+<%= form_for :pokemon, url: challenged_player_path(:player1_id => @player1) do |f| %>
+
+   <div class="field">
+    <%= f.label :challenger_pokemon_id %><br>
+    <%= f.collection_select(:challenger_pokemon_id, @pokemons, :id, :name) %>
+  </div>
+  
+  <%= f.submit  %>
+<% end  %>
+
+Challenger Player Name: <%=Player.find(params[:player1_id] = @player1).name  %> 

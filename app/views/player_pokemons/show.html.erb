@@ -2,13 +2,13 @@
 
 <p>
   <strong>Player:</strong>
-  <%= @player_pokemon.player_id %>
+  <%= Player.find(@player_pokemon.player_id).name %>
 </p>
 
 <p>
   <strong>Pokemon:</strong>
-  <%= @player_pokemon.pokemon_id %>
+  <%= Pokemon.find(@player_pokemon.pokemon_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_player_pokemon_path(@player_pokemon) %> |
+<!--<%= link_to 'Edit', edit_player_pokemon_path(@player_pokemon) %> |-->
 <%= link_to 'Back', player_pokemons_path %>

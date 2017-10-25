@@ -1,0 +1,41 @@
+<%= form_for :fight, url: fights_path(:challenger_player_id => @player1, :challenger_pokemon_id => @pokemon1, :challenged_player_id => @player2, :challenged_pokemon_id => @pokemon2 )  do |f| %>
+  <% if @fight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
+
+      <ul>
+      <% @fight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+Enter Fight Date, and Select the fight winner
+  <div class="field">
+     Challenger Player Name <br>
+    <%= Player.find(@player1).name %>
+    <!--<%= f.text_field :challenger_player_id %>-->
+  </div>
+  <div class="field">
+    Challenger Pokemon Name <br>
+    <%= Pokemon.find(@pokemon1).name %>
+  </div>
+  <div class="field">
+    Challenged Player Name <br>
+    <%= Player.find(@player2).name %>
+  </div>
+  <div class="field">
+    Challenged Pokemon Name<br>
+    <%= Pokemon.find(@pokemon2).name %>
+  </div>
+  <div class="field">
+    <%= f.label :fight_date %><br>
+    <%= f.date_field    :fight_date, :required => 'required'  %>
+  </div>
+  <div class="field">
+    <%= f.label :fight_winner %><br>
+    <%= select_tag(:fight_winner, options_for_select( [ [Player.find(@player1).name,@player1] ,[Player.find(@player2).name,@player2 ] ]) ) %>  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

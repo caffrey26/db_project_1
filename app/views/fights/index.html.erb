@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Challenger player</th>
+      <th>Challenger pokemon</th>
+      <th>Challenged player</th>
+      <th>Challenged pokemon</th>
+      <th>Fight date</th>
+      <th>Fight winner</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fights.each do |fight| %>
+      <tr>
+        <td><%= Player.find(fight.challenger_player_id).name %></td>
+        <td><%= Pokemon.find(fight.challenger_pokemon_id).name %></td>
+        <td><%= Player.find(fight.challenged_player_id).name %></td>
+        <td><%= Pokemon.find(fight.challenged_pokemon_id).name %></td>
+        <td><%= fight.fight_date %></td>
+        <td><%= Player.find(fight.fight_winner).name %></td>
+        <td><%= link_to 'Show', fight %></td>
+        <!--<td><%= link_to 'Edit', edit_fight_path(fight) %></td>-->
+        <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fight', new_fight_path %>

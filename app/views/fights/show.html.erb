@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Challenger player:</strong>
+  <%= Player.find(@fight.challenger_player_id).name %>
+</p>
+
+<p>
+  <strong>Challenger pokemon:</strong>
+  <%= Pokemon.find(@fight.challenger_pokemon_id).name %>
+</p>
+
+<p>
+  <strong>Challenged player:</strong>
+  <%= Player.find(@fight.challenged_player_id).name %>
+</p>
+
+<p>
+  <strong>Challenged pokemon:</strong>
+  <%= Pokemon.find(@fight.challenged_pokemon_id).name %>
+</p>
+
+<p>
+  <strong>Fight date:</strong>
+  <%= @fight.fight_date %>
+</p>
+
+<p>
+  <strong>Fight winner:</strong>
+  <%= Player.find(@fight.fight_winner).name %>
+</p>
+
+<!--<%= link_to 'Edit', edit_fight_path(@fight) %> |-->
+<%= link_to 'Back', fights_path %>
